@@ -704,7 +704,7 @@ Attribute LeaveEdit.VB_Description = "Occurs when a user leaves edit mode."
 Public Event EnterEdit()
 Attribute EnterEdit.VB_Description = "Occurs when a user enters edit mode."
 Public Event ValidateEdit(ByRef Cancel As Boolean)
-Attribute ValidateEdit.VB_Description = "Occurs before any changes made by a user are committed to a cell. If the validation fails the changes will be discarded and the control will remain in edit mode."
+Attribute ValidateEdit.VB_Description = "Occurs before any changes made by a user are committed to a cell. If the validation fails, the changes will be discarded and the control will remain in edit mode."
 Public Event EditSetupStyle(ByRef dwStyle As Long, ByRef dwExStyle As Long)
 Attribute EditSetupStyle.VB_Description = "Occurs before the edit control is created. This is a request to perform additional customizations."
 Public Event EditSetupWindow(ByRef BackColor As OLE_COLOR, ByRef ForeColor As OLE_COLOR)
@@ -748,7 +748,7 @@ Public Event KeyUp(KeyCode As Integer, Shift As Integer)
 Attribute KeyUp.VB_Description = "Occurs when the user releases a key while an object has the focus."
 Attribute KeyUp.VB_UserMemId = -604
 Public Event KeyPress(KeyChar As Integer)
-Attribute KeyPress.VB_Description = "Occurs when the user presses and releases an character key."
+Attribute KeyPress.VB_Description = "Occurs when the user presses and releases a character key."
 Attribute KeyPress.VB_UserMemId = -603
 Public Event BeforeMouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single, ByRef Cancel As Boolean)
 Attribute BeforeMouseDown.VB_Description = "Occurs before the control processes the MouseDown event."
@@ -2603,7 +2603,7 @@ UserControl.PropertyChanged "MouseIcon"
 End Property
 
 Public Property Get MouseTrack() As Boolean
-Attribute MouseTrack.VB_Description = "Returns/sets whether mouse events occurs when the mouse pointer enters or leaves the control."
+Attribute MouseTrack.VB_Description = "Returns/sets whether mouse events occur when the mouse pointer enters or leaves the control."
 MouseTrack = PropMouseTrack
 End Property
 
@@ -3386,7 +3386,7 @@ UserControl.PropertyChanged "ScrollTrack"
 End Property
 
 Public Property Get DisableNoScroll() As Boolean
-Attribute DisableNoScroll.VB_Description = "Returns/sets a value that determines whether scroll bars are disabled instead of hided when they are not needed."
+Attribute DisableNoScroll.VB_Description = "Returns/sets a value that determines whether scroll bars are disabled instead of hidden when they are not needed."
 DisableNoScroll = PropDisableNoScroll
 End Property
 
@@ -3462,7 +3462,7 @@ UserControl.PropertyChanged "FocusRectWidth"
 End Property
 
 Public Property Get RowHeightMin() As Long
-Attribute RowHeightMin.VB_Description = "Returns/sets a minimum row height in twips for the entire control."
+Attribute RowHeightMin.VB_Description = "Returns/sets a minimum row height, in Twips, for the entire control."
 RowHeightMin = UserControl.ScaleY(PropRowHeightMin, vbPixels, vbTwips)
 End Property
 
@@ -3482,7 +3482,7 @@ UserControl.PropertyChanged "RowHeightMin"
 End Property
 
 Public Property Get RowHeightMax() As Long
-Attribute RowHeightMax.VB_Description = "Returns/sets a maximum row height in twips for the entire control."
+Attribute RowHeightMax.VB_Description = "Returns/sets a maximum row height, in Twips, for the entire control."
 RowHeightMax = UserControl.ScaleY(PropRowHeightMax, vbPixels, vbTwips)
 End Property
 
@@ -3502,7 +3502,7 @@ UserControl.PropertyChanged "RowHeightMax"
 End Property
 
 Public Property Get ColWidthMin() As Long
-Attribute ColWidthMin.VB_Description = "Returns/sets a minimum column width in twips for the entire control."
+Attribute ColWidthMin.VB_Description = "Returns/sets a minimum column width, in Twips, for the entire control."
 ColWidthMin = UserControl.ScaleX(PropColWidthMin, vbPixels, vbTwips)
 End Property
 
@@ -3522,7 +3522,7 @@ UserControl.PropertyChanged "ColWidthMin"
 End Property
 
 Public Property Get ColWidthMax() As Long
-Attribute ColWidthMax.VB_Description = "Returns/sets a maximum column width in twips for the entire control."
+Attribute ColWidthMax.VB_Description = "Returns/sets a maximum column width, in Twips, for the entire control."
 ColWidthMax = UserControl.ScaleX(PropColWidthMax, vbPixels, vbTwips)
 End Property
 
@@ -5656,7 +5656,7 @@ HitResult = VBFlexGridHitResult
 End Property
 
 Public Property Get RowPos(ByVal Index As Long) As Long
-Attribute RowPos.VB_Description = "Returns the distance in twips between the upper-left corner of the control and the upper-left corner of a specified row."
+Attribute RowPos.VB_Description = "Returns the distance, in Twips, between the upper-left corner of the control and the upper-left corner of a specified row."
 Attribute RowPos.VB_MemberFlags = "400"
 If Index < 0 Or Index > (PropRows - 1) Then Err.Raise Number:=30009, Description:="Invalid Row value"
 Dim i As Long, Value As Long
@@ -5681,7 +5681,7 @@ RowPos = UserControl.ScaleY(Value, vbPixels, vbTwips)
 End Property
 
 Public Property Get RowPosition(ByVal Index As Long) As Long
-Attribute RowPosition.VB_Description = "Sets the position of an row, allowing you to move rows to specific positions."
+Attribute RowPosition.VB_Description = "Sets the position of a row, allowing you to move rows to specific positions."
 Attribute RowPosition.VB_MemberFlags = "400"
 Err.Raise Number:=394, Description:="Property is write-only"
 End Property
@@ -5713,7 +5713,7 @@ End With
 End Property
 
 Public Property Get RowHeight(ByVal Index As Long) As Long
-Attribute RowHeight.VB_Description = "Returns/sets the height in twips of the specified row."
+Attribute RowHeight.VB_Description = "Returns/sets the height, in Twips, of the specified row."
 Attribute RowHeight.VB_MemberFlags = "400"
 If Index < 0 Or Index > (PropRows - 1) Then Err.Raise Number:=30009, Description:="Invalid Row value"
 RowHeight = UserControl.ScaleY(GetRowHeight(Index), vbPixels, vbTwips)
@@ -5864,7 +5864,7 @@ SelectedRows = Count
 End Property
 
 Public Property Get RowID(ByVal Index As Long) As Long
-Attribute RowID.VB_Description = "Returns/sets an identification used to identify the specified row."
+Attribute RowID.VB_Description = "Returns/sets an identifier used to identify the specified row."
 Attribute RowID.VB_MemberFlags = "400"
 If Index < 0 Or Index > (PropRows - 1) Then Err.Raise Number:=30009, Description:="Invalid Row value"
 RowID = VBFlexGridCells.Rows(Index).RowInfo.ID
@@ -5876,7 +5876,7 @@ VBFlexGridCells.Rows(Index).RowInfo.ID = Value
 End Property
 
 Public Property Get RowIndex(ByVal ID As Long) As Long
-Attribute RowIndex.VB_Description = "Returns a row index given its identification."
+Attribute RowIndex.VB_Description = "Returns a row index given its identifier."
 Attribute RowIndex.VB_MemberFlags = "400"
 RowIndex = -1
 Dim i As Long
@@ -6014,7 +6014,7 @@ RowsPerPage = GetRowsPerPage(VBFlexGridTopRow)
 End Property
 
 Public Property Get ColPos(ByVal Index As Long) As Long
-Attribute ColPos.VB_Description = "Returns the distance in twips between the upper-left corner of the control and the upper-left corner of a specified column."
+Attribute ColPos.VB_Description = "Returns the distance, in Twips, between the upper-left corner of the control and the upper-left corner of a specified column."
 Attribute ColPos.VB_MemberFlags = "400"
 If Index < 0 Or Index > (PropCols - 1) Then Err.Raise Number:=30010, Description:="Invalid Col value"
 Dim i As Long, Value As Long
@@ -6087,7 +6087,7 @@ End With
 End Property
 
 Public Property Get ColWidth(ByVal Index As Long) As Long
-Attribute ColWidth.VB_Description = "Returns/sets the width in twips of the specified column."
+Attribute ColWidth.VB_Description = "Returns/sets the width, in Twips, of the specified column."
 Attribute ColWidth.VB_MemberFlags = "400"
 If Index < 0 Or Index > (PropCols - 1) Then Err.Raise Number:=30010, Description:="Invalid Col value"
 ColWidth = UserControl.ScaleX(GetColWidth_NoExtendLastCol(Index), vbPixels, vbTwips)
@@ -7135,7 +7135,7 @@ Call RedrawGrid
 End Property
 
 Public Property Get CellPicture() As IPictureDisp
-Attribute CellPicture.VB_Description = "Returns/sets an picture to be displayed in the current cell or in a range of cells."
+Attribute CellPicture.VB_Description = "Returns/sets a picture to be displayed in the current cell or in a range of cells."
 Attribute CellPicture.VB_MemberFlags = "400"
 If VBFlexGridRow < 0 Then
     Err.Raise Number:=30009, Description:="Invalid Row value"
@@ -7962,7 +7962,7 @@ End With
 End Sub
 
 Public Property Get CellLeft() As Long
-Attribute CellLeft.VB_Description = "Returns the left coordinate in twips of the current cell."
+Attribute CellLeft.VB_Description = "Returns the left coordinate, in Twips, of the current cell."
 Attribute CellLeft.VB_MemberFlags = "400"
 If VBFlexGridRow < 0 Then
     Err.Raise Number:=30009, Description:="Invalid Row value"
@@ -7976,7 +7976,7 @@ CellLeft = UserControl.ScaleX(CellRect.Left, vbPixels, vbTwips)
 End Property
 
 Public Property Get CellTop() As Long
-Attribute CellTop.VB_Description = "Returns the top coordinate in twips of the current cell."
+Attribute CellTop.VB_Description = "Returns the top coordinate, in Twips, of the current cell."
 Attribute CellTop.VB_MemberFlags = "400"
 If VBFlexGridRow < 0 Then
     Err.Raise Number:=30009, Description:="Invalid Row value"
@@ -7990,7 +7990,7 @@ CellTop = UserControl.ScaleY(CellRect.Top, vbPixels, vbTwips)
 End Property
 
 Public Property Get CellWidth() As Long
-Attribute CellWidth.VB_Description = "Returns the width in twips of the current cell."
+Attribute CellWidth.VB_Description = "Returns the width, in Twips, of the current cell."
 Attribute CellWidth.VB_MemberFlags = "400"
 If VBFlexGridRow < 0 Then
     Err.Raise Number:=30009, Description:="Invalid Row value"
@@ -8004,7 +8004,7 @@ CellWidth = UserControl.ScaleX((CellRect.Right - CellRect.Left) - 1, vbPixels, v
 End Property
 
 Public Property Get CellHeight() As Long
-Attribute CellHeight.VB_Description = "Returns the height in twips of the current cell."
+Attribute CellHeight.VB_Description = "Returns the height, in Twips, of the current cell."
 Attribute CellHeight.VB_MemberFlags = "400"
 If VBFlexGridRow < 0 Then
     Err.Raise Number:=30009, Description:="Invalid Row value"
